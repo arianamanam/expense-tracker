@@ -1,1 +1,11 @@
-<p>expenses works!</p>
+<div class="ax-card">
+  <h3>لیست هزینه‌ها</h3>
+  <ul class="ax-list">
+    <li *ngFor="let expense of expenses">
+      <p>{{ expense.description }} - {{ expense.amount }} تومان</p>
+      <small
+        >{{ expense.category }} | {{ expense.date | date : "shortDate" }}</small
+      >
+    </li>
+  </ul>
+</div>

@@ -1,11 +1,18 @@
-export class ExpenseService {
-  private expenses: Expense[] = [];
+import { Injectable } from '@angular/core';
 
-  getExpenses() {
-    return this.expenses;
+@Injectable({
+  providedIn: 'root',
+})
+export class ExpenseService {
+  private income: number = 0;
+  private expenses: number = 0;
+
+  setExpensesData(income: number, expenses: number): void {
+    this.income = income;
+    this.expenses = expenses;
   }
 
-  addExpense(expense: Expense) {
-    this.expenses.push(expense);
+  getExpensesData() {
+    return { income: this.income, expenses: this.expenses };
   }
 }

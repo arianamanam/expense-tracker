@@ -1,1 +1,28 @@
-<p>add-expense works!</p>
+<div class="form-container">
+  <h2>وارد کردن اطلاعات مالی</h2>
+  <form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+      <label for="income">درآمد:</label>
+      <input
+        id="income"
+        formControlName="income"
+        type="number"
+        placeholder="مقدار درآمد"
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="expenses">هزینه‌ها:</label>
+      <input
+        id="expenses"
+        formControlName="expenses"
+        type="number"
+        placeholder="مقدار هزینه‌ها"
+      />
+    </div>
+
+    <button type="submit" [disabled]="expenseForm.invalid">
+      محاسبه باقی‌مانده
+    </button>
+  </form>
+</div>
